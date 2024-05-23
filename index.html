@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eMeasurmatics Assessment</title>
+    <link rel="icon" type="image/x-icon"
+        href="https://static.wixstatic.com/media/2d141a_906b20a55f3246f39832c0d6cc18fe25.png/v1/fill/w_47,h_49,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/2d141a_906b20a55f3246f39832c0d6cc18fe25.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="main">
+            <div id="app"></div>
+            <div class="formContainer">
+                <div class="formControl">
+                    <h3>Selected Parcel: <span id="selectedParcelContainer"></span> </h3>
+                    <div>
+                        <div class="formControl">
+                            <label for="parcelNameInput">Enter Name :</label>
+                            <input type="text" id="parcelNameInput" placeholder="Parcel Name">
+                        </div>
+                        <div class="formControl">
+                            <label for="parcelGroupInput">Select Location Group :</label>
+                            <select id="parcelGroupInput">
+                                <option value="">Select Location</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="allButtons">
+                        <button onclick="addParcel('after')">Add After</button>
+                        <button onclick="addParcel('before')">Add Before</button>
+                        <button onclick="replaceParcel()">Replace</button>
+                        <button onclick="deleteParcel()">Delete</button>
+                        <button onclick="refreshParcels()">Refresh</button>
+                        <button onclick="showFinalData()">Show Final</button>
+                    </div>
+                </div>
+                <div class="parcelLegends"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>
