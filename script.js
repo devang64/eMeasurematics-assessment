@@ -160,7 +160,7 @@ function addParcel(position) {
     var index = data.findIndex(parcel => parcel.id === selectedParcel.id);
     if (position === 'after') {
         newParcel.sequence = data[index].sequence + 0.5;
-    } else {
+    } else if (position === 'after') {
         newParcel.sequence = data[index].sequence - 0.5;
     }
 
