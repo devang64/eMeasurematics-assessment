@@ -47,15 +47,29 @@ var selectedParcel = null;
 
 function resetForm() {
     var selectedParcelSpan = document.querySelector('#selectedParcel');
-    selectedParcelSpan.textContent = '';
-    document.getElementById('parcelNameInput').value = '';
-    document.getElementById('parcelGroupInput').value = '';
-    document.getElementById('selectedParcelContainer').innerHTML = '';
+    if (selectedParcelSpan) {
+        selectedParcelSpan.textContent = '';
+    }
+    var parcelNameInput = document.getElementById('parcelNameInput');
+    var parcelGroupInput = document.getElementById('parcelGroupInput');
+    var selectedParcelContainer = document.getElementById('selectedParcelContainer');
+
+    if (parcelNameInput) {
+        parcelNameInput.value = '';
+    }
+    if (parcelGroupInput) {
+        parcelGroupInput.value = '';
+    }
+    if (selectedParcelContainer) {
+        selectedParcelContainer.innerHTML = '';
+    }
+
     var selectedElements = document.querySelectorAll('.parcel .selected');
     selectedElements.forEach(function (element) {
         element.classList.remove('selected');
     });
 }
+
 
 function renderParcels() {
     data.sort(function (a, b) {
