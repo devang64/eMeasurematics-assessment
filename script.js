@@ -92,7 +92,6 @@ function renderParcels() {
         parcelsequenceDiv.style.backgroundColor = getGroupColor(parcel.group);
 
         var currentGroupContainer = appContainer.lastElementChild;
-        console.log('currentGroupContainer: ', currentGroupContainer);
         currentGroupContainer.appendChild(parcelElement);
         currentGroupContainer.appendChild(parcelElement);
         parcelElement.addEventListener('click', function () {
