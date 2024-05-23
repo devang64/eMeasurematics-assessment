@@ -160,14 +160,20 @@ function addParcel(position) {
     var index = data.findIndex(parcel => parcel.id === selectedParcel.id);
     if (position === 'after') {
         newParcel.sequence = data[index].sequence + 0.5;
-    } else if (position === 'after') {
+    } else if (position === 'before') {
         newParcel.sequence = data[index].sequence - 0.5;
     }
 
     data.push(newParcel);
     normalizeSequence();
     renderParcels();
-    resetForm();
+    document.getElementById('parcelNameInput').value = '';
+    document.getElementById('parcelGroupInput').value = '';
+    document.getElementById('selectedParcelContainer').innerHTML = '';
+    var selectedElements = document.querySelectorAll('.parcel .selected');
+    selectedElements.forEach(function (element) {
+        element.classList.remove('selected');
+    });
 }
 
 function replaceParcel() {
